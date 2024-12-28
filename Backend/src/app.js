@@ -17,4 +17,8 @@ import { router } from "./routes/user.route.js";
 
 app.use("/user", router);
 
+import { captainRoute } from "./routes/captain.route.js";
+
+app.use("/captain", captainRoute);
+
 export { app };
