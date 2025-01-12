@@ -1,0 +1,115 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { uber_driver } from "../imgUrl";
+
+const CaptainRegister = () => {
+  const [userData, setUserData] = useState({
+    fullname: {
+      firstname: "",
+      lastname: "",
+    },
+    email: "",
+    password: "",
+  });
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log(userData);
+    setUserData({
+      fullname: {
+        firstname: "",
+        lastname: "",
+      },
+      email: "",
+      password: "",
+    });
+  };
+
+  return (
+    <div className=" flex flex-col h-screen justify-between p-7">
+      <div>
+        <img className=" mix-blend-multiply w-14 mb-4" src={uber_driver} alt="" />
+        <form onSubmit={submitHandler}>
+          <h3 className="text-lg font-medium mb-2">What's out captain's name?</h3>
+          <div className="flex gap-3 mb-4 justify-center w-full">
+            <input
+              type="text"
+              name="firstname"
+              value={userData.fullname.firstname}
+              // onChange={(e) => handleOnChange(e)}
+              onChange={(e) =>
+                setUserData({
+                  ...userData,
+                  fullname: { ...userData.fullname, firstname: e.target.value },
+                })
+              }
+              required
+              placeholder="First Name"
+              className="bg-[#eeeeee] w-1/2 rounded px-4 py-2 border  text-base placeholder:text-sm"
+            />
+            <input
+              type="text"
+              name="lastname"
+              value={userData.fullname.lastname}
+              // onChange={(e) => handleOnChange(e)}
+              onChange={(e) =>
+                setUserData({
+                  ...userData,
+                  fullname: { ...userData.fullname, lastname: e.target.value },
+                })
+              }
+              // required
+              placeholder="Last Name"
+              className="bg-[#eeeeee] w-1/2 rounded px-4 py-2 border text-base placeholder:text-sm"
+            />
+          </div>
+          <h3 className="text-lg font-medium mb-2">What's our captain's email?</h3>
+          <input
+            type="email"
+            name="email"
+            value={userData.email}
+            // onChange={(e) => handleOnChange(e)}
+            onChange={(e) =>
+              setUserData({ ...userData, email: e.target.value })
+            }
+            required
+            placeholder="email@example.com"
+            className="bg-[#eeeeee] mb-4 rounded px-4 py-2 border w-full text-base placeholder:text-sm"
+          />
+          <h3 className="text-lg font-medium mb-2">Enter Password</h3>
+          <input
+            name="password"
+            value={userData.password}
+            // onChange={(e) => handleOnChange(e)}
+            onChange={(e) =>
+              setUserData({ ...userData, password: e.target.value })
+            }
+            type="password"
+            required
+            placeholder="password"
+            className="bg-[#eeeeee] mb-7 rounded px-4 py-2 border w-full text-base placeholder:text-sm"
+          />
+          <button className="bg-[#111] text-white font-semibold mb-5 rounded px-4 py-2  w-full text-lg placeholder:text-base">
+            Login
+          </button>
+          <p className="text-center">
+            Already have an account?
+            <Link to="/captainlogin" className="text-blue-600  ">
+              {" "}
+              Login Here
+            </Link>
+          </p>
+        </form>
+      </div>
+      <div>
+        <p className="text-[10px] leading-tight ">
+          This site is protected by reCAPTCHA and the Google Privacy Policy and
+          the <span className="underline">Google privacy policy</span> and{" "}
+          <span className="underline">Term of service policy</span>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default CaptainRegister;
