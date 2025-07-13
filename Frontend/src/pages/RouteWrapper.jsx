@@ -10,7 +10,7 @@ const RouteWrapper = ({ children }) => {
 
   React.useEffect(() => {
     if (!token) {
-      navigate("/userlogin");
+      navigate("/user/login");
     }
 
     axios

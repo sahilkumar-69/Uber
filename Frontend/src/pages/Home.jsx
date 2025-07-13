@@ -6,7 +6,7 @@ import LocationSearchPanel from "../components/LocationSearchPanel";
 import VehiclePanelPage from "../components/VehiclePanel";
 import ConfirmRide from "../components/ConfirmRide";
 import LookingForDrivers from "../components/LookingForDrivers";
-import WaitingForDriver from "../components/WaitingForDriver";
+// import WaitingForDriver from "../components/WaitingForDriver";
 
 const Home = () => {
   const [pickUp, setPickUp] = useState("");
@@ -105,7 +105,7 @@ const Home = () => {
     <div className="h-screen overflow-hidden relative">
       <img
         className="w-16 absolute top-5 left-5"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Uber_logo_2018.svg/2560px-Uber_logo_2018.svg.png"
+        src="https://logos-world.net/wp-content/uploads/2020/05/Uber-Logo.png"
         alt=""
       />
 
@@ -118,7 +118,7 @@ const Home = () => {
       >
         <img
           className="w-full h-full object-cover"
-          src="https://t3.ftcdn.net/jpg/07/28/30/26/360_F_728302620_Xddnf5Cl0K1ACZurd6yByUzHiHMMIoe6.jpg"
+          src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif"
           alt=""
         />
       </div>
@@ -196,13 +196,13 @@ const Home = () => {
         />
       </div>
       <div>
-        <WaitingForDriver
+        {/* <WaitingForDriver
           // confirmRideArrowRef={confirmRideArrowRef}
           // setConfirmRide={setConfirmRide}
           confirmRideRef={confirmRideRef}
           lookingForDriversRef={lookingForDriversRef}
           setVehiclePanel={setVehiclePanel}
-        />
+        /> */}
       </div>
     </div>
   );

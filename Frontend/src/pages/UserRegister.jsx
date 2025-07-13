@@ -131,7 +131,7 @@ const UserRegister = () => {
           </button>
           <p className="text-center">
             Already have an account?
-            <Link to="/userlogin" className="text-blue-600  ">
+            <Link to="/user/login" className="text-blue-600  ">
               {" "}
               Login Here
             </Link>
