@@ -1,32 +1,30 @@
-const ConfirmRide = ({
-  confirmRideRef,
-  confirmRideArrowRef,
-  setConfirmRide,
-  setVehiclePanel,
-  setLookingForDriver,
-}) => {
+const RidePopUp = ({ setRidePopUpPanel, setConfirmRidePopUpPanel }) => {
   return (
-    <div
-      ref={confirmRideRef}
-      className="w-full translate-y-full z-10 bottom-0 bg-white fixed p-3 "
-    >
+    <div>
       <h5
-        ref={confirmRideArrowRef}
         onClick={() => {
-          setConfirmRide(false), setVehiclePanel(true);
+          setRidePopUpPanel(false);
         }}
-        className=" opacity-1 text-center  text-2xl top-3 right-5"
+        className=" p-1 text-center absolute w-[93%]  text-2xl top-0"
       >
-        <i className=" text-gray-400 ri-arrow-down-wide-line"></i>
+        <i className=" text-gray-400 text-3xl ri-arrow-down-wide-line"></i>
       </h5>
-      <h2 className="text-xl text-center  font-bold mb-2">Confirm your ride</h2>
+      <h2 className="text-xl text-center  font-bold mb-2">
+        New Ride Available
+      </h2>
+      <div className="flex  mt-4 items-center justify-between">
+        <div className="flex items-center  gap-3">
+          <img
+            className="w-10 h-10 rounded-full object-cover"
+            src="https://www.vice.com/wp-content/uploads/sites/2/2017/09/1505214697354-nina.jpeg"
+            alt="profile photo"
+          />
+          <h2>Heavy Driver</h2>
+        </div>
+        <h5>2.2 KM</h5>
+      </div>
 
       <div className="flex  flex-col justify-between items-center ">
-        <img
-          className="h-20"
-          src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1682350473/assets/97/e2a99c-c349-484f-b6b0-3cea1a8331b5/original/UberBlack.png"
-          alt=""
-        />
         <div className="w-full">
           <div className="flex gap-5 items-center p-3 border-b-2 ">
             <i className=" text-lg  ri-map-pin-2-line"></i>
@@ -58,16 +56,23 @@ const ConfirmRide = ({
           </div>
         </div>
 
-        {/* <div>price</div> */}
         <button
-          onClick={() => setLookingForDriver(true)}
-          className="w-full mt-4  bg-green-600  text-lg font-semibold px-2 py-2 rounded-lg "
+          onClick={() => {setConfirmRidePopUpPanel(true);setRidePopUpPanel(false)}}
+          className="w-full mt-1  bg-green-600  text-lg font-semibold px-2 py-2 rounded-lg "
         >
-          Confirm Ride
+          Confirm
+        </button>
+        <button
+          onClick={() => {
+            setRidePopUpPanel(false);
+          }}
+          className="w-full my-2  bg-gray-300  text-lg font-semibold px-2 py-2 rounded-lg "
+        >
+          Ignore
         </button>
       </div>
     </div>
   );
 };
 
-export default ConfirmRide;
+export default RidePopUp;

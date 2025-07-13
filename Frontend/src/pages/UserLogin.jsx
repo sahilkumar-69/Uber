@@ -67,7 +67,7 @@ const UserLogin = () => {
           </button>
           <p className="text-center">
             New Here?
-            <Link to="/userregister" className="text-blue-600  ">
+            <Link to="/user/register" className="text-blue-600  ">
               {" "}
               Create new Account
             </Link>
@@ -76,7 +76,7 @@ const UserLogin = () => {
       </div>
       <div>
         <Link
-          to="/captainlogin"
+          to="/captain/login"
           className="bg-[green] flex items-center justify-center text-white font-semibold mb-7 rounded px-4 py-2  w-full text-lg placeholder:text-base"
         >
           Sign in as Captain

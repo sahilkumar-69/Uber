@@ -64,7 +64,7 @@ const CaptainLogin = () => {
           </button>
           <p className="text-center">
             Join a fleet?
-            <Link to="/captainregister" className="text-blue-600  ">
+            <Link to="/captain/register" className="text-blue-600  ">
               {" "}
               Register as Captain
             </Link>
@@ -73,7 +73,7 @@ const CaptainLogin = () => {
       </div>
       <div>
         <Link
-          to="/userlogin"
+          to="/user/login"
           className="bg-[Blue] flex items-center justify-center text-white font-semibold mb-7 rounded px-4 py-2  w-full text-lg placeholder:text-base"
         >
           Sign in as User

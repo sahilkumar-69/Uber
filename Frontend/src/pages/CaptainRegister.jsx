@@ -218,7 +218,7 @@ const CaptainRegister = () => {
           </button>
           <p className="text-center">
             Already have an account?
-            <Link to="/captainlogin" className="text-blue-600  ">
+            <Link to="/captain/login" className="text-blue-600  ">
               {" "}
               Login Here
             </Link>

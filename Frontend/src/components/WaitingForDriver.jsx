@@ -1,9 +1,9 @@
 import React from "react";
 
-const WaitingForDriver = () => {
+const WaitingForDriver = ({ lookingForDriversRef }) => {
   return (
     <div
-      //   ref={lookingForDriversRef}
+      ref={lookingForDriversRef}
       className="w-full z-10 bottom-0 bg-white fixed p-3 "
     >
       <h5
